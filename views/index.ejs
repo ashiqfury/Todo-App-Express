@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+
+	<body>
+		<div class="container">
+			<%- include('./partials/header.ejs') %>
+			<div class="content">
+				<h1>Todo List</h1>
+				<div class="content">
+					<% if (todo.length > 0) { %>
+						<% for (let item in todo) { %>
+							<a href="/todo/<%= todo[item]._id %> ">
+								<h2 class="title-index"><%= todo[item].title %></h2>
+							</a>
+						<% } %> 
+					<% } %>
+				</div>
+			</div>
+			<%- include('./partials/footer.ejs') %>
+		</div>
+	</body>
+</html>

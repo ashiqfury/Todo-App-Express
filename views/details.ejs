@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+
+	<body>
+		<div class="container">
+			<%- include('./partials/header.ejs') %>
+			<div class="content">
+				<h1>Todo List</h1>
+				<div class="content">
+					<h2 class="title-index"><strong>Title: </strong><%= todo.title %></h2>
+					<h3 class="title-index">
+						<strong>Category: </strong><%= todo.category %>
+					</h3>
+					<p class="title-index">
+						<strong>Description: </strong><%= todo.description %>
+					</p>
+					<br />
+					<a class="delete" style="cursor: pointer" data-doc="<%= todo._id %>"
+						>Delete</a
+					>
+				</div>
+			</div>
+			<%- include('./partials/footer.ejs') %>
+
+			<script>
+				const trashcan = document.querySelector('a.delete');
+
+				trashcan.addEventListener('click', () => {
+					const endPoint = `/todo/${trashcan.dataset.doc}`;
+
+					fetch(endPoint, {
+						method: 'DELETE',
+					})
+						.then((response) => response.json())
+						.then((data) => (window.location.href = data.redirect))
+						.catch((err) => console.log(err));
+				});
+			</script>
+		</div>
+	</body>
+</html>

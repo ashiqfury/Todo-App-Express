@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('./partials/head.ejs') %>
+	<body>
+		<%- include('./partials/header.ejs') %>
+		<div class="content">
+			<h1>Create your list here!</h1>
+			<form action="/todo" method="POST">
+				<label for="title">Enter todo name</label>
+				<input type="text" name="title" id="title" required autofocus />
+				<label for="category">Enter category</label>
+				<input type="text" name="category" id="category" required />
+				<label for="description">Enter description</label>
+				<textarea name="description" id="description" required></textarea>
+				<button>Submit</button>
+			</form>
+		</div>
+		<%- include('./partials/footer.ejs') %>
+	</body>
+</html>
