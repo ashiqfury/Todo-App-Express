@@ -5,17 +5,16 @@
 	<body>
 		<div class="container">
 			<%- include('./partials/header.ejs') %>
-			<div class="content">
-				<h1>Todo List</h1>
-				<div class="content">
-					<% if (todo.length > 0) { %>
-						<% for (let item in todo) { %>
-							<a href="/todo/<%= todo[item]._id %> ">
-								<h2 class="title-index"><%= todo[item].title %></h2>
-							</a>
-						<% } %> 
-					<% } %>
-				</div>
+			<div class="todo content">
+				<% if (todo.length > 0) { %>
+					<% for (let item in todo) { %>
+						<a class="single" href="/todo/<%= todo[item]._id %> ">
+							<h3 class="title"><%= todo[item].title %></h3>
+						</a>
+					<% } %> 
+				<% } else { %>
+					<p>No todos to display</p>
+				<% } %> 
 			</div>
 			<%- include('./partials/footer.ejs') %>
 		</div>

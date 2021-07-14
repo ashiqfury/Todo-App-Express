@@ -5,7 +5,8 @@
 	<body>
 		<div class="container">
 			<%- include('./partials/header.ejs') %>
-			<div class="content">
+
+			<div class="details content">
 				<h1>Todo List</h1>
 				<div class="content">
 					<h2 class="title-index"><strong>Title: </strong><%= todo.title %></h2>
@@ -16,11 +17,10 @@
 						<strong>Description: </strong><%= todo.description %>
 					</p>
 					<br />
-					<a class="delete" style="cursor: pointer" data-doc="<%= todo._id %>"
-						>Delete</a
-					>
+					<a class="delete" data-doc="<%= todo._id %>">Delete</a>
 				</div>
 			</div>
+
 			<%- include('./partials/footer.ejs') %>
 
 			<script>
