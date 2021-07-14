@@ -1,1 +1,0 @@
-const titles = document.querySelector('')

@@ -6,11 +6,27 @@
 		<div class="create-blog content">
 			<form action="/todo" method="POST">
 				<label for="title">Enter todo name</label>
-				<input type="text" name="title" id="title" required autofocus />
+				<input
+					type="text"
+					name="title"
+					id="title"
+					placeholder="eg. Buy a cricket bat"
+					required
+					autofocus
+				/>
 				<label for="category">Enter category</label>
-				<input type="text" name="category" id="category" />
+				<input
+					type="text"
+					name="category"
+					id="category"
+					placeholder="eg. Sports"
+				/>
 				<label for="description">Enter description</label>
-				<textarea name="description" id="description"></textarea>
+				<textarea
+					name="description"
+					id="description"
+					placeholder="eg. This bat helps me to practice well!"
+				></textarea>
 				<button>Submit</button>
 			</form>
 		</div>

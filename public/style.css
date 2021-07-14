@@ -1,11 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+:root {
+	/* None of these colors are used. */
+	--pink-lavender: hsla(278, 35%, 78%, 1);
+	--orchid-pink: hsla(337, 100%, 89%, 1);
+	--nadeshiko-pink: hsla(338, 100%, 84%, 1);
+	--uranian-blue: hsla(208, 97%, 87%, 1);
+	--baby-blue-eyes: hsla(209, 100%, 82%, 1);
+}
+
+body::-webkit-scrollbar {
+	width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: crimson;
+}
+
 body {
 	max-width: 1200px;
+	max-width: 100%;
+	height: 100%;
+	min-height: 100vh;
 	margin: 20px auto;
 	padding: 0 20px;
+	background: #f1f1f1;
 	font-family: 'Noto Serif', serif;
-	height: 100vh;
-	max-width: 100%;
 }
 p,
 h1,
@@ -44,9 +64,22 @@ nav a {
 	font-weight: 300;
 }
 footer {
-	color: #777;
+	height: 30px;
 	text-align: center;
-	margin: 80px auto 20px;
+	position: relative;
+	margin: 40px 0 10px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+footer p,
+footer a {
+	color: #000;
+	line-height: 30px;
+	transition: 150ms;
+}
+footer a:hover {
+	color: #777;
 }
 h2 {
 	text-transform: capitalize;
@@ -88,6 +121,19 @@ h2 {
 	cursor: pointer;
 	transform: scale(1.05);
 }
+
+/* about styles */
+.about p {
+	display: block;
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+.about p::first-letter {
+	font-size: 30px;
+	color: crimson;
+	padding-right: 2px;
+}
+
 /* create styles */
 .create-blog form {
 	max-width: 400px;
@@ -108,10 +154,15 @@ textarea {
 	height: 120px;
 	resize: none;
 }
-input,
-button,
-textarea {
+form input,
+form button,
+form textarea {
+	transition: 150ms;
 	font-family: 'poppins', sans-serif;
+}
+form button:hover {
+	border-radius: 3px;
+	transform: scale(0.95);
 }
 .create-blog button {
 	margin-top: 20px;
@@ -121,4 +172,9 @@ textarea {
 	border: 0;
 	font-size: 1.2em;
 	cursor: pointer;
+}
+
+.completed {
+	text-decoration: line-through;
+	color: #777;
 }
